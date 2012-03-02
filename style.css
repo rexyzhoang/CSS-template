@@ -1,11 +1,12 @@
 /*
 	HUUTHINHHOUSE CSS TEMPLATE :: style.css
+	a tweaked version to suit our projects
 	----------------------------------------------------------
 	We have learned much from/been inspired by/taken code where offered from:
 
-	Eric Meyer					:: http://ericmeyer.com
 	HTML5 Doctor				:: http://html5doctor.com
 	Normalise.css               :: http://necolas.github.com/normalize.css/
+	HTML5 reset                 :: http://html5reset.org/
 	and esp. HTML5 Boilerplate	:: http://html5boilerplate.com
 	------------------------------------------------------------
     # Version 1.0 - Last Updated: 29-02-2012 10 am
@@ -56,14 +57,22 @@ audio:not([controls]) { display: none; }
    Base
    ========================================================================== */
 
+/*
+ * 1. Correct text resizing oddly in IE6/7 when body font-size is set using em units
+ * 2. Prevent iOS text size adjust on device orientation change, without disabling user zoom: h5bp.com/g
+ */
+
+/** consider adding a vertical scrollbar to prevent a jumpy page */
 html { font-size: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
 
+/** Addresses font-family inconsistency between 'textarea' and other form elements */
 html, button, input, select, textarea { font-family: sans-serif; color: #222; }
 
 body { font-size: 1em; line-height: 1.4; }
 
-::-moz-selection { background: #fe57a1; color: #fff; text-shadow: none; }
-::selection { background: #fe57a1; color: #fff; text-shadow: none; }
+/** bright Green selection highlight for typical projects */
+::-moz-selection { background: #7AAD21; color: #fff; text-shadow: none; }
+::selection { background: #7AAD21; color: #fff; text-shadow: none; }
 
 /* 
 =============================================================================
@@ -71,10 +80,11 @@ body { font-size: 1em; line-height: 1.4; }
    ========================================================================== 
 */
 
-a { color: #00e; }
+a { color: #00e; border-bottom: 1px solid #bbb; }
 a:visited { color: #551a8b; }
-a:hover { color: #06e; }
+a:hover { color: #06e; border-bottom: 1px solid green; }
 a:focus { outline: thin dotted; }
+/** Improve readability when focused and hovered in all browsers */
 a:hover, a:active { outline: 0; }
 
 /* =============================================================================
@@ -84,7 +94,7 @@ a:hover, a:active { outline: 0; }
 /*
  * Addresses font sizes and margins set differently in IE6/7
  * Addresses font sizes within 'section' and 'article' in FF4+, Chrome, S5
- * Change to suite your needs
+ * Change to suit your needs
  */
 
 h1 {
@@ -116,7 +126,6 @@ h6 {
     font-size: 0.75em;
     margin: 2.33em 0;
 }
-
 
 abbr[title] { border-bottom: 1px dotted; }
 
@@ -167,7 +176,10 @@ ul { list-style: none; }
    Embedded content + Figures
    ========================================================================== */
 
+
+/* 1. Improve image quality when scaled in IE7: h5bp.com/d || 2. Remove the gap between images and borders on image containers: h5bp.com/i/440 */
 img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; }
+/*Correct overflow not hidden in IE9*/
 svg:not(:root) { overflow: hidden; }
 figure { margin: 0; }
 
@@ -259,6 +271,7 @@ td { vertical-align: top; }
    Modify as content requires.
    ========================================================================== */
 
+/* Consider this: www.cloudfour.com/css-media-query-for-mobile-is-fools-gold/ */
 @media only screen and (min-width: 35em) {
   /* Style adjustments for viewports that meet the condition */
 }
